@@ -32,4 +32,9 @@ public class ReturnStudy {
 		
 		return name;
 	}
+	
+	public Scanner test4() {
+		Scanner sc = new Scanner(System.in);
+		return sc;
+	}
 }

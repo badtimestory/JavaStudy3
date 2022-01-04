@@ -1,4 +1,7 @@
 package com.iu.st1.method;
+
+import java.util.Scanner;
+
 public class MethodMain {
 	public static void main(String[] args) {
 		System.out.println("MainMethod Start");
@@ -18,6 +21,13 @@ public class MethodMain {
 		
 		double randomValue = Math.random();
 		System.out.println("랜덤 값: " + randomValue);
+		
+		Scanner sc = rs.test4();
+		System.out.println("나이를 입력하세요");
+		int age = sc.nextInt();
+		
+		System.out.println(+age);
+		System.out.println("Math.random" + num);
 		
 		System.out.println("MainMethod Finish");
 	}
