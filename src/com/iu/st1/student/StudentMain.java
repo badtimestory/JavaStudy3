@@ -12,33 +12,8 @@ import java.util.Scanner;
 public class StudentMain {
 	public static void main(String[] args) {
 		
-		StudentView sv = new StudentView();
-		StudentUtil su = new StudentUtil();
-		
-		Student[] students = new Student[2];
-		Student student = new Student();
-
-		student.name = "춘식이";
-		student.number = 1;
-		student.kor = 80;
-		student.eng = 70;
-		student.math = 60;
-		students[0] = student;
-		
-		student = new Student();	// 학생 1명 생성
-		student.name = "파댕이";
-		student.number = 2;
-		student.kor = 60;
-		student.eng = 70;
-		student.math = 80;
-		students[1] = student;
-		
-		Student student2 = su.search(students);
-		if(student2 != null) {
-			sv.viewStudent(student2);
-		} else {
-			sv.viewMessage("학생이 없습니다.");
-		}
+		StudentController scontol = new StudentController();
+		scontol.Start();
 		System.out.println("종료");
 		
 		
