@@ -10,21 +10,25 @@ import java.util.Scanner;
  * 
  * */
 public class StudentUtil {
+	Scanner sc;
 	
 	// 학생 객체를 생성하고 정보를 입력 받는 곳
+	public void initUtil() {
+		this.sc = new Scanner(System.in);
+	}
 	
-	// 검색할 학생의 번호를 입력
-	// 입력 받은 번호와 일치하는 학생을 찾아서 리턴
 	public Student search(Student[] students) {
-		Scanner scanner = new Scanner(System.in);
+		// 검색할 학생의 번호를 입력
+		// 입력 받은 번호와 일치하는 학생을 찾아서 리턴
+		
 		System.out.print("검색할 학생의 번호를 입력하세요: ");
-		int num = scanner.nextInt();
+		int num = sc.nextInt();
 
 		Student student = null;
 		
 		for (int i = 0; i < students.length; i++) {
 			if(students[i].number == num ) {
-				System.out.println("Find");
+				System.out.println("검색할 학생 번호 입력");
 				student = students[i];
 				break;
 			}
@@ -41,18 +45,19 @@ public class StudentUtil {
 		
 		for (int i = 0; i < students.length; i++) {
 			// 키보드로부터 이름, 번호, 국어, 영어, 수학 입력
-			Student stu = new Student();
+			Student student = new Student();
 			System.out.print("이름을 입력하세요: ");
-			stu.name = sc.next();
+			student.name = sc.next();
 			System.out.print("번호를 입력하세요: ");
-			stu.number = sc.nextInt();
+			student.number = sc.nextInt();
 			System.out.print("국어 점수를 입력하세요: ");
-			stu.kor = sc.nextInt();
+			student.kor = sc.nextInt();
 			System.out.print("영어 점수를 입력하세요: ");
-			stu.eng = sc.nextInt();
+			student.eng = sc.nextInt();
 			System.out.print("수학 점수를 입력하세요: ");
-			stu.math = sc.nextInt();
-			students[i] = stu; 
+			student.math = sc.nextInt();
+			student.makeTotal();
+			students[i] = student; 
 		}
 		// 학생들의 정보를 리턴
 		// 배열
@@ -60,7 +65,6 @@ public class StudentUtil {
 	}
 	
 	public Student makeStudnt() {
-		Scanner sc = new Scanner(System.in);
 		Student student = new Student();
 		
 		System.out.print("이름을 입력하세요: ");
@@ -73,7 +77,7 @@ public class StudentUtil {
 		student.eng = sc.nextInt();
 		System.out.print("수학 점수를 입력하세요: ");
 		student.math = sc.nextInt();
-		
+		student.makeTotal();
 		return student;
 	}
 }

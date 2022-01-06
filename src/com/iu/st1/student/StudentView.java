@@ -12,12 +12,9 @@ public class StudentView {
 	// 출력 전용
 	public void viewStudents(Student[] students) {
 		for (int i = 0; i < students.length; i++) {
-			Student student = students[i];
-			System.out.println("이름: " + student.name);
-			System.out.println("학생번호: " + student.number + "번");
-			System.out.println("국어점수: " + student.kor + "점");
-			System.out.println("영어점수: " + student.eng + "점");
-			System.out.println("수학점수: " + student.math + "점");
+//			Student student = students[i];
+//			this.viewStudent(student);
+			this.viewStudent(students[i]);
 			
 		}
 	}
@@ -29,6 +26,8 @@ public class StudentView {
 		System.out.println("국어점수: " + student.kor + "점");
 		System.out.println("영어점수: " + student.eng + "점");
 		System.out.println("수학점수: " + student.math + "점");
+		System.out.println("총점: " + student.total + "점");
+		System.out.println("평균: " + student.avg + "점");
 	}
 	
 	public void viewMessage(String message) {
