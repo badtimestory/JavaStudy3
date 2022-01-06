@@ -15,8 +15,7 @@ public class Square {
 	int length;		// 세로
 	
 	public boolean same(Square s) {
-		
-		if(width == this.width && length == this.length) {
+		if(this.width == s.width && this.length == s.length) {
 			return true;
 		} else {
 			return false;

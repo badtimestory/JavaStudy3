@@ -10,17 +10,17 @@ package com.iu.st1.student;
 public class StudentView {
 	
 	// 출력 전용
-	public void viewStudents(Student[] students) {
+	public void view(Student[] students) {
 		for (int i = 0; i < students.length; i++) {
 //			Student student = students[i];
 //			this.viewStudent(student);
-			this.viewStudent(students[i]);
+			this.view(students[i]);
 			
 		}
 	}
 	
 	// 출력 전용
-	public void viewStudent(Student student) {	// 인스턴스의 주소를 전달받음
+	public void view(Student student) {	// 인스턴스의 주소를 전달받음
 		System.out.println("이름: " + student.name);
 		System.out.println("학생번호: " + student.number + "번");
 		System.out.println("국어점수: " + student.kor + "점");
@@ -30,7 +30,7 @@ public class StudentView {
 		System.out.println("평균: " + student.avg + "점");
 	}
 	
-	public void viewMessage(String message) {
+	public void view(String message) {
 		// 문자열 출력 테스트
 		System.out.println("---------------------");
 		System.out.println(message);

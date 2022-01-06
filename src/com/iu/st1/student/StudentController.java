@@ -13,7 +13,7 @@ public class StudentController {
 		Scanner scanner = new Scanner(System.in);
 		boolean cheak = true;
 		StudentUtil sutil = new StudentUtil();
-		sutil.initUtil();
+		// sutil.initUtil();
 		StudentView sv = new StudentView();
 		Student[] students = null;
 
@@ -33,21 +33,21 @@ public class StudentController {
 				break;
 			case 2:
 				if(students != null) {
-					sv.viewStudents(students);					
+					sv.view(students);					
 				} else {
-					sv.viewMessage("학생정보를 먼저 입력하세요");
+					sv.view("학생정보를 먼저 입력하세요");
 				}
 				break;
 			case 3:
 				if(students == null) {
-					sv.viewMessage("학생 정보가 없습니다.");
+					sv.view("학생 정보가 없습니다.");
 					continue;
 				}
 				Student student = sutil.search(students);
 				if(student != null) {
-					sv.viewStudent(student);
+					sv.view(student);
 				} else {
-					sv.viewMessage("검색 결과가 없습니다. ");
+					sv.view("검색 결과가 없습니다. ");
 				}
 				break;
 			default:
